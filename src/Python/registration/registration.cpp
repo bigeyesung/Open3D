@@ -88,11 +88,10 @@ void pybind_registration_classes(py::module &m) {
             convergence_criteria);
     convergence_criteria
             .def(py::init([](double fitness, double rmse, int itr) {
-                     return new registration::ICPConvergenceCriteria(fitness,
-                                                                     rmse, itr);
+                     return new registration::ICPConvergenceCriteria(fitness, rmse, itr);
                  }),
                  "relative_fitness"_a = 1e-6, "relative_rmse"_a = 1e-6,
-                 "max_iteration"_a = 30)
+                 "max_iteration"_a = 50)
             .def_readwrite(
                     "relative_fitness",
                     &registration::ICPConvergenceCriteria::relative_fitness_,
