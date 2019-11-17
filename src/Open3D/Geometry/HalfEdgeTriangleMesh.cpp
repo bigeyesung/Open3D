@@ -138,7 +138,7 @@ bool HalfEdgeTriangleMesh::ComputeHalfEdges() {
                 init_half_edge_index = half_edge_index;
             }
         }
-        if (num_boundaries > 1) {
+        if (num_boundaries > 0) {
             utility::LogWarning("ComputeHalfEdges failed. Invalid vertex.\n");
             return false;
         }
