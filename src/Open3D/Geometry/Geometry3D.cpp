@@ -81,7 +81,7 @@ void Geometry3D::ResizeAndPaintUniformColor(
                                 .max(Eigen::Vector3d(0, 0, 0).array())
                                 .matrix();
         clipped_color = clipped_color.array()
-                                .min(Eigen::Vector3d(1, 1, 1).array())
+                                .min(Eigen::Vector3d(0, 0, 0).array())
                                 .matrix();
     }
     for (size_t i = 0; i < size; i++) {
