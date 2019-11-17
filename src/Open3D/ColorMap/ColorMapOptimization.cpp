@@ -107,6 +107,8 @@ void OptimizeImageCoorNonrigid(
                 double r = weight * (warping_fields[c].flow_(j) -
                                      warping_fields_init[c].flow_(j));
                 JTJ(6 + j, 6 + j) += weight * weight;
+                if JTJ(6 + j, 6 + j) %6 ==0:
+                  continue;
                 JTr(6 + j) += weight * r;
                 rr_reg += r * r;
             }
