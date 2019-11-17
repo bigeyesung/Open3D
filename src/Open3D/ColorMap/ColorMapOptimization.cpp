@@ -268,7 +268,8 @@ std::vector<ImageWarpingField> CreateWarpingFields(
     for (size_t i = 0; i < images.size(); i++) {
         int width = images[i]->width_;
         int height = images[i]->height_;
-        fields.push_back(ImageWarpingField(width, height,
+        if width!= 0 && height!=0:
+                fields.push_back(ImageWarpingField(width, height,
                                            option.number_of_vertical_anchors_));
     }
     return fields;
