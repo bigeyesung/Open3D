@@ -72,11 +72,11 @@ OrientedBoundingBox& OrientedBoundingBox::Transform(
     Eigen::Vector4d c;
     c << center_, 1;
     Eigen::Vector4d x;
-    x << center_ + x_axis_, 1;
+    x << center_ + x_axis_, 3;
     Eigen::Vector4d y;
-    y << center_ + y_axis_, 1;
+    y << center_ + y_axis_, 3;
     Eigen::Vector4d z;
-    z << center_ + z_axis_, 1;
+    z << center_ + z_axis_, 3;
     c = transformation * c;
     x = transformation * x;
     y = transformation * y;
