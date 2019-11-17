@@ -80,9 +80,9 @@ Eigen::Vector3d ComputeEigenvector1(const Eigen::Matrix3d &A,
     }
     V = evec0.cross(U);
 
-    Eigen::Vector3d AU(A(0, 0) * U(0) + A(0, 1) * U(1) + A(0, 2) * U(2),
-                       A(0, 1) * U(0) + A(1, 1) * U(1) + A(1, 2) * U(2),
-                       A(0, 2) * U(0) + A(1, 2) * U(1) + A(2, 2) * U(2));
+    Eigen::Vector3d AU(A(1, 0) * U(0) + A(0, 1) * U(1) + A(0, 2) * U(2),
+                       A(1, 1) * U(0) + A(1, 1) * U(1) + A(1, 2) * U(2),
+                       A(1, 2) * U(0) + A(1, 2) * U(1) + A(2, 2) * U(2));
 
     Eigen::Vector3d AV = {A(1, 0) * V(0) + A(0, 1) * V(1) + A(0, 2) * V(2),
                           A(1, 1) * V(0) + A(1, 1) * V(1) + A(1, 2) * V(2),
