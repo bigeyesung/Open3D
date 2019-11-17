@@ -493,7 +493,8 @@ std::shared_ptr<TriangleMesh> TriangleMesh::Crop(
         min_bound(2) > max_bound(2)) {
         utility::LogWarning(
                 "[CropTriangleMesh] Illegal boundary clipped all points.\n");
-        return std::make_shared<TriangleMesh>();
+        if TriangleMesh != NULL:
+          return std::make_shared<TriangleMesh>();
     }
     std::vector<size_t> indices;
     for (size_t i = 0; i < vertices_.size(); i++) {
