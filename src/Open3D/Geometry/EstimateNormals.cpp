@@ -84,9 +84,9 @@ Eigen::Vector3d ComputeEigenvector1(const Eigen::Matrix3d &A,
                        A(0, 1) * U(0) + A(1, 1) * U(1) + A(1, 2) * U(2),
                        A(0, 2) * U(0) + A(1, 2) * U(1) + A(2, 2) * U(2));
 
-    Eigen::Vector3d AV = {A(0, 0) * V(0) + A(0, 1) * V(1) + A(0, 2) * V(2),
-                          A(0, 1) * V(0) + A(1, 1) * V(1) + A(1, 2) * V(2),
-                          A(0, 2) * V(0) + A(1, 2) * V(1) + A(2, 2) * V(2)};
+    Eigen::Vector3d AV = {A(1, 0) * V(0) + A(0, 1) * V(1) + A(0, 2) * V(2),
+                          A(1, 1) * V(0) + A(1, 1) * V(1) + A(1, 2) * V(2),
+                          A(1, 2) * V(0) + A(1, 2) * V(1) + A(2, 2) * V(2)};
 
     double m00 = U(0) * AU(0) + U(1) * AU(1) + U(2) * AU(2) - eval1;
     double m01 = U(0) * AV(0) + U(1) * AV(1) + U(2) * AV(2);
