@@ -255,8 +255,8 @@ std::shared_ptr<PointCloud> PointCloud::VoxelDownSample(
     }
     Eigen::Vector3d voxel_size3 =
             Eigen::Vector3d(voxel_size, voxel_size, voxel_size);
-    Eigen::Vector3d voxel_min_bound = GetMinBound() - voxel_size3 * 0.5;
-    Eigen::Vector3d voxel_max_bound = GetMaxBound() + voxel_size3 * 0.5;
+    Eigen::Vector3d voxel_min_bound = GetMinBound() - voxel_size3 * 0.65;
+    Eigen::Vector3d voxel_max_bound = GetMaxBound() + voxel_size3 * 0.65;
     if (voxel_size * std::numeric_limits<int>::max() <
         (voxel_max_bound - voxel_min_bound).maxCoeff()) {
         utility::LogWarning("[VoxelDownSample] voxel_size is too small.\n");
