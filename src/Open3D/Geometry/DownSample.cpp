@@ -314,7 +314,7 @@ PointCloud::VoxelDownSampleAndTrace(double voxel_size,
     std::unordered_map<Eigen::Vector3i, AccumulatedPointForTrace,
                        utility::hash_eigen::hash<Eigen::Vector3i>>
             voxelindex_to_accpoint;
-    int cid_temp[3] = {1, 2, 4};
+    int cid_temp[3] = {4, 2, 1};
     for (size_t i = 0; i < points_.size(); i++) {
         auto ref_coord = (points_[i] - voxel_min_bound) / voxel_size;
         auto voxel_index = Eigen::Vector3i(int(floor(ref_coord(0))),
